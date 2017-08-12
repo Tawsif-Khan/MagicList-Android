@@ -43,7 +43,7 @@ public class MagicListAdapter<T> extends BaseAdapter {
         view = inflater.inflate(layoutId,null);
     }
 
-    public View getLayout(){
+    private View getLayout(){
         return view = inflater.inflate(layoutId,null);
     }
 
@@ -69,6 +69,7 @@ public class MagicListAdapter<T> extends BaseAdapter {
         if(convertView == null){
             holder = new ViewHolder();
             convertView = getLayout();
+
             holder = setHolderTextViews(holder,convertView);
             convertView.setTag(holder);
             Log.d("msg","if");
@@ -80,12 +81,10 @@ public class MagicListAdapter<T> extends BaseAdapter {
         T cls =  objects.get(pos);
         setText(holder,cls);
 
-
-
         return convertView;
     }
 
-    public void setText(ViewHolder holder, T cls){
+    private void setText(ViewHolder holder, T cls){
         for(int i=0;i<holder.textViews.size();i++){
             TextView tv = holder.textViews.get(i);
             try {
@@ -108,14 +107,14 @@ public class MagicListAdapter<T> extends BaseAdapter {
         valueField.put(id,value);
     }
 
-    public ViewHolder setHolderTextViews(ViewHolder holder, View convertView){
+    private ViewHolder setHolderTextViews(ViewHolder holder, View convertView){
         for(int i=0;i<textViews.size();i++) {
             holder.textViews.add((TextView) convertView.findViewById(textViews.get(i).getId()));
         }
         return holder;
     }
 
-    class ViewHolder{
+    private class ViewHolder{
         ArrayList<TextView> textViews = new ArrayList<>();
         ArrayList<ImageView> imageViews = new ArrayList<>();
         ArrayList<Button> buttons = new ArrayList<>();
