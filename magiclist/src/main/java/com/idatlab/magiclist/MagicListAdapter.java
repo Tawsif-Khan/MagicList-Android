@@ -1,6 +1,5 @@
 package com.idatlab.magiclist;
 
-import android.app.job.JobInfo;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
