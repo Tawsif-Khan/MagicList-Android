@@ -43,6 +43,7 @@ public class MagicListAdapter<T> extends BaseAdapter implements View.OnClickList
     private MagicListener magicListener;
     private int position;
 
+
     public MagicListAdapter(Context context, ArrayList<T> objects) {
         this.context = context;
         this.objects = objects;
